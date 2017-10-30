@@ -8,11 +8,16 @@ Web-приложение “RubyNews”.
 #### 2.1.1. HTML, CSS, Twitter Bootstrap.  
 #### 2.1.2. Ruby, Ruby on Rails.  
 #### 2.1.3. SQLite. 
-### 2.2. Интерфейс пользователя.(Add mockups)
+### 2.2. Интерфейс пользователя.
 #### 2.2.1. Интерфейс страницы входа через социальные сети. 
+![alt text](https://github.com/ml-dalos/RubyNews/blob/master/mockups/Welcome%20mockup.png)
 #### 2.2.2. Интерфейс главной страницы, с отображением новостей.
+![alt text](https://github.com/ml-dalos/RubyNews/blob/master/mockups/Main%20mockup.png)
 #### 2.2.3. Интерфейс прогноза погоды.
+![alt text](https://github.com/ml-dalos/RubyNews/blob/master/mockups/Weather%20mockup.png)
 #### 2.2.4. Интерфейс настроек отображаемых ресурсов.
+
+![alt text](https://github.com/ml-dalos/RubyNews/blob/master/mockups/Settings%20mockup.png)
 ### 2.3. Характеристики пользователей.
 Приложение интересно для пользователей, которые любят читать новости с различных ресурсов, а так же тем кто хочет оперативно посмотреть прогноз погоды.
 Продукт будет подходить для любой категории людей, независимо от образования и рода профессии.

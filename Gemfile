@@ -33,8 +33,19 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# gem Bootstrap for using this css framework
 gem 'bootstrap'
+# gem for using jQuery in the app
 gem 'jquery-rails'
+
+#gem Devise and Omniauth-* for authentication through the socials
+gem 'devise'
+
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-twitter'
+gem 'omniauth-vk'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
     @city = JSON.parse(Net::HTTP.get(URI(url_location)))['city']
     url_weather = "http://api.openweathermap.org/data/2.5/weather?q=#{@city}&appid=172d1d74437e766c4bd5cde75c58e0da"
     weather = JSON.parse(Net::HTTP.get(URI(url_weather)))
-    # @main = weather['weather']['main']
+    @main = weather['weather'][0]['main']
     @temperature = weather['main']['temp']
     @humidity = weather['main']['humidity']
     @wind = weather['wind']['speed']

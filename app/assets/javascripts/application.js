@@ -738,3 +738,7 @@
 
     global.Skycons = Skycons;
 }(this));
+
+var skycons = new Skycons({"color": "gray"});
+skycons.add("icon1", Skycons.RAIN);
+skycons.play();

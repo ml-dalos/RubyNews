@@ -9,9 +9,7 @@
   <% if @main == 'Clouds' %>
       <canvas id="icon1" width="128" height="128"></canvas>
       <script>
-          var skycons = new Skycons({"color": "gray"});
-          skycons.add("icon1", Skycons.RAIN);
-          skycons.play();
+
       </script>
   <% end %>
   Your temperature <%= @temperature.to_i - 274 %>

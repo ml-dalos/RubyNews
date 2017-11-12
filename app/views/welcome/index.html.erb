@@ -2,5 +2,9 @@
 <p>
   The time is now: <%= Time.now %>
   <br/>
-  Your location <%= request.location.city %>
+  Your location country <%= request.location.country %>
+  Your location city <%= request.location.country %>
+  Your ip <%= request.ip %>
+  <%= Timeout::timeout(5) {Net::HTTP.get_response(URI.parse('http://api.hostip.info/country.php?ip=' + request.remote_ip)).body} rescue "US" %>
+
 </p>

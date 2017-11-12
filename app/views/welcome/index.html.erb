@@ -6,6 +6,14 @@
   <br>
   Your weather <%= @main %>
   <br>
+  <% if @main == 'rain' %>
+      <canvas id="icon1" width="128" height="128"></canvas>
+      <script>
+          var skycons = new Skycons({"color": "gray"});
+          skycons.add("icon1", Skycons.RAIN);
+          skycons.play();
+      </script>
+  <% end %>
   Your temperature <%= @temperature.to_i - 274 %>
   <br>
   Your humidity <%= @humidity %>

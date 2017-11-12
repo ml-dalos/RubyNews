@@ -34,7 +34,6 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
 gem 'omniauth-vk'
-
 gem 'geocoder'
 
 group :development, :test do

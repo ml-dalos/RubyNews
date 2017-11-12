@@ -2,5 +2,5 @@
 <p>
   Your ip <%= request.ip %>
   <br>
-  Your city <%= Net::HTTP.get_response(URI.parse("http://api.db-ip.com/v2/c19b3558fbbf6b72dffdb99cf85139c7fe0663e7/#{request.ip}")) %>
+  Your city <%= JSON.parse(Net::HTTP.get("http://api.db-ip.com/v2/c19b3558fbbf6b72dffdb99cf85139c7fe0663e7/#{request.ip}")) %>
 </p>

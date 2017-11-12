@@ -2,5 +2,6 @@
 <p>
   Your ip <%= request.ip %>
   <br>
-  Your city <%= JSON.parse(Net::HTTP.get(URI("http://api.db-ip.com/v2/c19b3558fbbf6b72dffdb99cf85139c7fe0663e7/#{request.ip}"))) %>
+  Your city <%= city = JSON.parse(Net::HTTP.get(URI("http://api.db-ip.com/v2/c19b3558fbbf6b72dffdb99cf85139c7fe0663e7/#{request.ip}")))['city'] %>
+  Your weather <%= JSON.parse(Net::HTTP.get(URI("http://api.openweathermap.org/data/2.5/weather?q=#{city}&appid=172d1d74437e766c4bd5cde75c58e0da"))) %>
 </p>

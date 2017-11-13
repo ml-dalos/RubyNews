@@ -1,0 +1,5 @@
+document.getElementById('content').addEventListener('ajax:success', function (event) {
+<% @weather.each do |forecast| %>
+    $('#content').append($("<div><%= forecast['main']['temp'] - 273 %> <%= forecast['weather'][0]['main'] %> <%= icon(get_icon(forecast['weather'][0]['main'])) %> <%= forecast['wind']['speed'] + 'm/s,' %> <%= get_direction(forecast['wind']['deg']) %></div>"))
+<% end %>
+});

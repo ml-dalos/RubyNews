@@ -1,6 +1,6 @@
 class WeatherController < ApplicationController
 
-  DIRECTIONS = %w!N NNE NE ENE E ESE SE SSE S SSW SW WSW W WNW NW NNW!
+  DIRECTIONS = %w[N NNE NE ENE E ESE SE SSE S SSW SW WSW W WNW NW NNW].freeze
 
   def index
     @weather = parse_weather
@@ -28,7 +28,7 @@ class WeatherController < ApplicationController
     when /.*[Cc]lear sky/
       'sun-o'
     else
-       'thermometer-half'
+      'thermometer-half'
     end
   end
 
@@ -39,17 +39,27 @@ class WeatherController < ApplicationController
     JSON.parse(Net::HTTP.get(URI(url_location)))['city']
   end
 
-  def get_weather_json
+  def weather_json
     city = parse_location
     url_weather = "http://api.openweathermap.org/data/2.5/forecast?q=#{city}&mode=json&appid=172d1d74437e766c4bd5cde75c58e0da"
     JSON.parse(Net::HTTP.get(URI(url_weather)))
   end
 
   def parse_weather
-    get_weather_json.
+    list = weather_json['list']
+    date = list[0]['dt'] + one_day
+    weather = [list.shift]
+    list.each do |forecast|
+      if forecast['dt'] == date
+        date += one_day
+        weather << forecast
+      end
+    end
+    weather
   end
 
-  def choose_icon main
+  def one_day
+    86_400
   end
 
 end

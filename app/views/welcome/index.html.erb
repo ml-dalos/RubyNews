@@ -2,7 +2,7 @@
 <h2>Hello World</h2>
 <p>
   Your ip <%= request.ip %>
-  <%= link_to 'Get weather', weather_index_path, remote: true %>
+  <%= button_to 'Get weather', weather_index_path, method: 'get',  remote: true, class: 'btn btn-success' %>
 </p>
 </div>
 <div class="col-lg-9" id="content">

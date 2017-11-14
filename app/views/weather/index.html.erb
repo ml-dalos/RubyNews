@@ -1,0 +1,25 @@
+<div class="col-lg-3">
+  <h2>Hello World</h2>
+  <p>
+    Your ip <%= request.ip %>
+  </p>
+  <%= button_to 'Get weather', weather_index_path, method: 'get', class: 'btn btn-success' %>
+</div>
+<div class="col-lg-9" id="content">
+  <div class="row">
+    <div class="col-lg-1"> <h2><%= Time.now.strftime('%a') %></h2></div>
+    <div class="col-lg-2">
+      <%= icon(WeatherController.new.get_icon(@weather[0]['weather'][0]['main'])) %>
+      <h3><%= @weather[0]['weather'][0]['main'] %></h3>
+    </div>
+    <div class="col-lg-1">
+      <%=  (@weather[0]['main']['weather'] - 273.15).round %> &deg C
+    </div>
+    <div class="col-lg-1">
+      <h4><%= @weather[0]['wind']['speed'] %>m/s</h4>
+    </div>
+    <div class="col-lg-1">
+      <h4><%= WeatherController.new.get_direction(@weather[0]['wind']['deg']) %></h4>
+    </div>
+  </div>
+</div>

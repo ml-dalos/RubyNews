@@ -4,9 +4,6 @@ class WeatherController < ApplicationController
 
   def index
     @weather = parse_weather
-    respond_to do |format|
-      format.js
-    end
   end
 
   def get_direction(deg)
@@ -30,6 +27,10 @@ class WeatherController < ApplicationController
     else
       'thermometer-half'
     end
+  end
+
+  def one_day
+    86_400
   end
 
   private
@@ -58,8 +59,5 @@ class WeatherController < ApplicationController
     weather
   end
 
-  def one_day
-    86_400
-  end
 
 end

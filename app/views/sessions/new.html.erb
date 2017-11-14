@@ -1,10 +1,48 @@
-<div id="navbar">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RubyNews</title>
+  <%= csrf_meta_tags %>
 
-      <ul class="nav navbar-nav">
-        <li><%= link_to 'Twitter', '/auth/twitter' %></li>
-        <li><%= link_to 'Facebook', '/auth/facebook' %></li>
-        <li><%= link_to 'Vkontakte', '/auth/vk' %></li>
-        <li><%= link_to 'Google+', '/auth/google' %></li>
-      </ul>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
+<body>
+<div class="container-fluid">
+  <div class="row" style="padding-top: 50px">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <h1 align="center" style="font-size:65px;"><%= icon('diamond', class: 'fa-3x') %>Ruby News</h1>
+    </div>
+  </div>
+  <div class="row" style="padding-top: 50px">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <h1 align="center">Read all news in one place!</h1>
+      <h1 align="center">Here you can read Onliner,</h1>
+      <h1 align="center">TUT.BY, Meduza and other!</h1>
+      <h1 align="center">Here you can find forecast!</h1>
+    </div>
+  </div>
+  <div class="row" style="padding-top: 50px">
+    <div class="col-lg-4 col-md-4 col-sm-4"></div>
+    <div class="col-lg-5 col-md-5 col-sm-5" style="font-size: 30px">
+      Join with:
+      <div class="btn-group -align-center">
+      <%= button_to '/auth/twitter', method: :get, class: 'btn btn-default social' do %>
+          <%= icon('twitter', class: 'fa-4x') %>
+      <% end %>
+      <%= button_to '/auth/facebook', method: :get, class: 'btn btn-default social' do %>
+          <%= icon('facebook', class: 'fa-4x') %>
+      <% end %>
+      <%= button_to '/auth/vk', method: :get, class: 'btn btn-default social' do %>
+          <%= icon('vk', class: 'fa-4x') %>
+      <% end %>
+      <%= button_to '/auth/google', method: :get, class: 'btn btn-default social' do %>
+          <%= icon('google-plus', class: 'fa-4x') %>
+      <% end %>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3"></div>
+    </div>
+  </div>
 </div>
+</body>

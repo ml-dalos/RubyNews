@@ -1,7 +1,10 @@
 class WeatherController < ApplicationController
   def index
-    redirect_to '/sign_in' unless helpers.current_user
-    @weather = helpers.parse_weather
+    if !helpers.current_user
+      redirect_to '/log_in'
+    else
+      @weather = helpers.parse_weather
+    end
   rescue
     render 'error'
   end

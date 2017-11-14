@@ -10,6 +10,9 @@
 
 <body>
 <div class="container-fluid">
+  <ul class="nav navbar-nav pull-right">
+    <li><%= link_to 'Log Out', '/logout' %></li>
+  </ul>
   <div class="row" style="padding-top: 20px">
     <div class="col-lg-3 col-md-3 col-sm-3 control" style="padding-top: 10px">
       <h2 style="padding-bottom: 20px"><%= icon('diamond', class: 'fa-2x') %>Ruby News</h2>
@@ -21,7 +24,7 @@
           <%= icon('thermometer-half') %> Weather
       <% end %>
       <hr>
-      <%= button_to  '/', method: 'get', class: 'btn btn-default w-100' do %>
+      <%= button_to '/', method: 'get', class: 'btn btn-default w-100' do %>
           <%= icon('cogs') %> Settings
       <% end %>
     </div>

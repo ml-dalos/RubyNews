@@ -10,17 +10,26 @@
 
 <body>
 <div class="container-fluid">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <div class="row">
-    <div class="col-lg-3 col-md-3 col-sm-3">
-      <h2>Hello World</h2>
-      <p>
-        Your ip <%= request.ip %>
-      </p>
-      <%= button_to 'Get weather', '/weather', method: 'get', class: 'btn btn-success' %>
+  <div class="row" style="padding-top: 20px">
+    <div class="col-lg-3 col-md-3 col-sm-3 control" style="padding-top: 10px">
+      <h2 style="padding-bottom: 20px"><%= icon('diamond', class: 'fa-2x') %>Ruby News</h2>
+      <%= button_to 'All in one', '/', method: 'get', class: 'btn btn-default w-100' %>
+      <hr>
+      список ресурсов
+      <hr>
+      <%= button_to '/weather', method: 'get', class: 'btn btn-default w-100' do %>
+          <%= icon('thermometer-half') %> Weather
+      <% end %>
+      <hr>
+      <%= button_to  '/', method: 'get', class: 'btn btn-default w-100' do %>
+          <%= icon('cogs') %> Settings
+      <% end %>
     </div>
-    <%= yield %>
+    <div class="col-lg-9 col-md-9 col-sm-9" id="content">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
   </div>
 </div>
 </body>

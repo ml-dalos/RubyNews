@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20171019204642) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "users", force: :cascade do |t|
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false

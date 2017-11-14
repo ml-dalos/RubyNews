@@ -6,12 +6,16 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.postgresql
+  database: db/development
+  username: alexey
+  password: 54ihanan
 
 test:
   <<: *default
-  database: db/test.postgresql
+  database: db/test
+  username: alexey
+  password: 54ihanan
 
 production:
   <<: *default
-  database: db/production.postgresql
+  database: db/production

@@ -10,17 +10,18 @@
 
 <body>
 <div class="container-fluid">
-  <div class="row">
-    <div class="col"></div>
-    <div class="col"></div>
-    <div class="col align-top" , style="text-align: right">
-      <%= link_to 'ru', '#' %> /
-      <%= link_to 'en', '#' %>
-    </div>
-  </div>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  <%= yield %>
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-3">
+      <h2>Hello World</h2>
+      <p>
+        Your ip <%= request.ip %>
+      </p>
+      <%= button_to 'Get weather', '/weather', method: 'get', class: 'btn btn-success' %>
+    </div>
+    <%= yield %>
+  </div>
 </div>
 </body>
 </html>

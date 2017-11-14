@@ -22,7 +22,7 @@ class WeatherController < ApplicationController
       'bolt'
     when /.*[Mm]ist/
       'align-justify'
-    when /.*[Cc]lear sky/
+    when /.*[Cc]lear/
       'sun-o'
     else
       'thermometer-half'

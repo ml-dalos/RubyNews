@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'welcome#index'
   get 'weather', to: 'weather#index'
   get 'welcome/index'

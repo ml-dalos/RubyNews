@@ -22,7 +22,7 @@
 <table class="table-striped" style="width: 100%">
   <% @weather.each.with_index do |weather, index| %>
       <tr>
-        <td><h4 align="center"><%= (Time.now + one_day * (index +1)).strftime('%a') %></h4></td>
+        <td><h4 align="right" style="margin-right: 4px"><%= (Time.now + one_day * (index +1)).strftime('%a') %></h4></td>
         <td><h4 align="center"><%= (weather['main']['temp'] - 273.15).round %>&degC</h4></td>
         <td>
           <h4 align="center"><%= icon(get_icon(weather['weather'][0]['main']), class: 'fa-2x') %></h4>

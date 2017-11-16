@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'privacy', to: 'welcome#privacy'
   get 'log_in', to: 'sessions#new'
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'

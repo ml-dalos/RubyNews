@@ -2,10 +2,6 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider :twitter,
            'gRukpzks6S3Jz1IsUDUvoe3jV',
            'KsRtgs2qOLo3aw4ivzFaFYoaNe7SdDp1VoPK5mLVPrb6KetzOS'
-  provider :facebook,
-           '533022970367344',
-           '48941cf54bb097af40004f2b4edc41f8',
-           scope: 'public_profile'
   provider :vk,
            '6100837',
            'hWI4wrah15xaxNSofKho'
@@ -15,4 +11,9 @@ Rails.application.config.middleware.use OmniAuth::Builder do
            scope: 'profile',
            access_type: 'online',
            name: 'google'
+  provider :instagram,
+          '902078035f8a4ecfbaa12185c2efe2b1',
+           '86a98a83797443e2bcc821edcaf819ba',
+           scope: 'basic'
+
 end

@@ -9,11 +9,11 @@ class SessionsController < ApplicationController
     session[:user_id] = @user.id
     redirect_to root_path
   rescue
-    redirect_to '/log_in'
+    redirect_to '/login'
   end
 
   def destroy
     session.delete(:user_id) if helpers.current_user
-    redirect_to '/log_in'
+    redirect_to '/login'
   end
 end

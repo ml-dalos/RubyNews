@@ -11,4 +11,9 @@ Rails.application.config.middleware.use OmniAuth::Builder do
            scope: 'profile',
            access_type: 'online',
            name: 'google'
+  provider :instagram,
+          '902078035f8a4ecfbaa12185c2efe2b1',
+           '86a98a83797443e2bcc821edcaf819ba',
+           scope: 'basic'
+
 end

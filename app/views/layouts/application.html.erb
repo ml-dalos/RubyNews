@@ -18,7 +18,9 @@
       <h2 style="padding-bottom: 20px"><%= icon('diamond', class: 'fa-2x') %>Ruby News</h2>
       <%= button_to 'All in one', '/', method: 'get', class: 'btn btn-default w-100' %>
       <hr>
-      список ресурсов
+      <% current_user.sources.each do |source| %>
+          <%= button_to source.capitalize, root_path(source: source), method: 'get', class: 'btn btn-default w-100' %>
+      <% end %>
       <hr>
       <%= button_to '/weather', method: 'get', class: 'btn btn-default w-100' do %>
           <%= icon('thermometer-half') %> Weather

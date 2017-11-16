@@ -19,7 +19,7 @@
       <%= button_to 'All in one', '/', method: 'get', class: 'btn btn-default w-100' %>
       <hr>
       <% current_user.sources.each do |source| %>
-          <%= button_to source.capitalize, root_path(source: source), method: 'get', class: 'btn btn-default w-100' %>
+          <%= link_to source.capitalize, "/news?source=#{source}", class: 'btn btn-default w-100 source' %>
       <% end %>
       <hr>
       <%= button_to '/weather', method: 'get', class: 'btn btn-default w-100' do %>
@@ -31,8 +31,6 @@
       <% end %>
     </div>
     <div class="col-lg-9 col-md-9 col-sm-9" id="content">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
   </div>

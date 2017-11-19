@@ -119,7 +119,7 @@ task parse_charter: :environment do
   items.first(30).each do |item|
     begin
       news = News.new(title: item.children[1].content,
-                      link: item.children[5].content,
+                      link: item.children[3].content,
                       description: item.children[11].content,
                       source: 'charter')
       news.save
@@ -138,7 +138,7 @@ task parse_geektimes: :environment do
     begin
       news = News.new(title: item.children[1].content,
                       link: item.children[3].content,
-                      description: item.children[7].content.gsub(/<.{1,20}>|<a.*>|Читать дальше../, ''),
+                      description: item.children[7].content.gsub(/<.{1,100}>|\n|<a.*>|Читать дальше../, ''),
                       source: 'geektimes')
       news.save
     rescue ActiveRecord::RecordNotUnique

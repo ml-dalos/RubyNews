@@ -26,17 +26,16 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap'
 # gem for using jQuery in the app
 gem 'jquery-rails'
-
+# gem for including font-awesome icons in views
 gem 'font-awesome-sass'
-
+# gem for finding geo-location by IP
 gem 'geocoder'
-
-
 # gems Omniauth-* for authentication through the socials
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
 gem 'omniauth-vk'
-
+# gem Nokogiri for parsing xml files
+gem 'nokogiri'
 
 
 group :development, :test do

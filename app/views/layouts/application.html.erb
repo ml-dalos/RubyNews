@@ -22,8 +22,22 @@
         <%= form_tag '/update' do %>
             <%= check_box_tag :tut, '1', source?(:tut) %>
             <%= label_tag(:tut, 'tut.by') %>
+            <%= check_box_tag :onliner, '1', source?(:onliner) %>
+            <%= label_tag(:onliner, 'people.onliner.by') %>
             <%= check_box_tag(:meduza, '1', source?(:meduza)) %>
             <%= label_tag(:meduza, 'meduza.ru') %>
+            <%= check_box_tag :lenta, '1', source?(:lenta) %>
+            <%= label_tag(:lenta, 'lenta.ru') %>
+            <%= check_box_tag :lifehacker, '1', source?(:lifehacker) %>
+            <%= label_tag(:lifehacker, 'lifehacker.ru') %>
+            <%= check_box_tag :bbc, '1', source?(:bbc) %>
+            <%= label_tag(:bbc, 'BBC Russia') %>
+            <%= check_box_tag :tut, '1', source?(:tut) %>
+            <%= label_tag(:tut, 'tut.by') %>
+            <%= check_box_tag :charter, '1', source?(:charter) %>
+            <%= label_tag(:charter, 'charter97.by') %>
+            <%= check_box_tag :geektimes, '1', source?(:geektimes) %>
+            <%= label_tag(:geektimes, 'geektimes.ru') %>
         <div class="row -align-center">
           <div class="col-lg-6" align="right">
             <%= submit_tag 'Save', class: 'btn btn-default w-50' %>
@@ -39,7 +53,7 @@
 </div>
 <div class="container-fluid">
   <div class="row" style="padding-top: 20px">
-    <div class="col-lg-3 col-md-3 col-sm-3 fixed-top" style="padding-top: 10px">
+    <div class="col-lg-3 col-md-3 col-sm-3 control fixed-top" style="padding-top: 10px">
       <h2 style="padding-bottom: 20px"><%= icon('diamond', class: 'fa-2x') %>Ruby News</h2>
       <%= button_to 'All in one', '/', method: 'get', class: 'btn btn-default w-100' %>
       <hr>

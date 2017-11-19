@@ -8,13 +8,38 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body>
+<body class="body">
+<div class="modal fade bd-modal-lg" id="settings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Settings</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_tag '/update' do %>
+            <%= check_box_tag :tut, '1', source?(:tut) %>
+            <%= label_tag(:tut, 'tut.by') %>
+            <%= check_box_tag(:meduza, '1', source?(:meduza)) %>
+            <%= label_tag(:meduza, 'meduza.ru') %>
+        <div class="row -align-center">
+          <div class="col-lg-6" align="right">
+            <%= submit_tag 'Save', class: 'btn btn-default w-50' %>
+          </div>
+        <% end %>
+          <div class="col-lg-6">
+            <%= button_to 'Log out', '/logout', method: 'get', class: 'btn btn-default w-50' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container-fluid">
-  <ul class="nav navbar-nav pull-right">
-    <li><%= link_to 'Log Out', '/logout' %></li>
-  </ul>
   <div class="row" style="padding-top: 20px">
-    <div class="col-lg-3 col-md-3 col-sm-3 control" style="padding-top: 10px">
+    <div class="col-lg-3 col-md-3 col-sm-3 fixed-top" style="padding-top: 10px">
       <h2 style="padding-bottom: 20px"><%= icon('diamond', class: 'fa-2x') %>Ruby News</h2>
       <%= button_to 'All in one', '/', method: 'get', class: 'btn btn-default w-100' %>
       <hr>
@@ -26,9 +51,9 @@
           <%= icon('thermometer-half') %> Weather
       <% end %>
       <hr>
-      <%= button_to '/', method: 'get', class: 'btn btn-default w-100' do %>
-          <%= icon('cogs') %> Settings
-      <% end %>
+      <button type="button" class="btn btn-default w-100" data-toggle="modal" data-target="#settings">
+        <%= icon('cogs') %> Settings
+      </button>
     </div>
     <div class="col-lg-9 col-md-9 col-sm-9" id="content">
       <%= yield %>

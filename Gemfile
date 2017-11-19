@@ -27,14 +27,16 @@ gem 'bootstrap'
 # gem for using jQuery in the app
 gem 'jquery-rails'
 
-# gem Devise and Omniauth-* for authentication through the socials
-gem 'devise'
-
 gem 'font-awesome-sass'
+
 gem 'geocoder'
+
+
+# gems Omniauth-* for authentication through the socials
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
 gem 'omniauth-vk'
+
 
 
 group :development, :test do

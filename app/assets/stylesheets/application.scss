@@ -38,3 +38,11 @@ a, a:hover {
   background: buttonface;
   color: buttontext;
 }
+
+.card-block form{
+  text-align: right;
+  margin-right: 10px;
+}
+.card-block form .btn{
+  width: 15%;
+}

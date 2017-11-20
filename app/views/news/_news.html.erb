@@ -1,3 +1,8 @@
-<h2><%= link_to news.title, news.link %></h2>
-<%= news.source %>
-<%= raw(news.description) %>
+<div class="card" style="width: 100%; margin-top: 10px; padding: 10px">
+  <div class="card-block">
+    <h4 class="card-title"><%= news.title %></h4>
+    <h6 class="card-subtitle mb-2 text-muted"><%= news.source %></h6>
+    <p class="card-text"><%= raw(news.description) %></p>
+    <%= button_to 'Read', news.link, method: :get, class: 'btn btn-default card-button', form: {target: '_blank'} %>
+  </div>
+</div>

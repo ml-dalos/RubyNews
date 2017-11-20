@@ -1,7 +1,7 @@
-<h1 style="padding-bottom: 40px; padding-top: 25px">Weather forecast</h1>
+<h1 style="padding-bottom: 40px; padding-top: 25px"><%= t :weather_forecast %></h1>
 <div class="row">
   <div class="col-lg-3 col-md-3 col-sm-3">
-    <h2 align="center">TODAY:</h2>
+    <h2 align="center"><%= t('weather.today') %></h2>
     <h2 align="center"><%= Time.now.strftime('%a') %></h2>
     <h3 align="center"><%= @weather[0]['weather'][0]['description'].capitalize %></h3>
   </div>
@@ -10,11 +10,11 @@
     <h3 align="center"><%= (@weather[0]['main']['temp'] - 273.15).round %> &deg C</h3>
   </div>
   <div class="col-lg-5 col-md-5 col-sm-5">
-    <h3>Wind: <%= @weather[0]['wind']['speed'] %>m/s,
+    <h3><%= t('weather.wind') %> <%= @weather[0]['wind']['speed'] %>m/s,
       <%= get_direction(@weather[0]['wind']['deg']) %>
     </h3>
-    <h3>Humidity: <%= @weather[0]['main']['humidity'] %>% </h3>
-    <h3>Cloudiness: <%= @weather.shift['clouds']['all'] %>% </h3>
+    <h3><%= t('weather.humidity') %> <%= @weather[0]['main']['humidity'] %>% </h3>
+    <h3><%= t('weather.cloudiness') %> <%= @weather.shift['clouds']['all'] %>% </h3>
   </div>
 </div>
 <hr>
@@ -22,16 +22,17 @@
 <table class="table-striped" style="width: 100%">
   <% @weather.each.with_index do |weather, index| %>
       <tr>
-        <td><h4 align="center" style="margin-left: 5px"><%= (Time.now + one_day * (index +1)).strftime('%a') %></h4></td>
+        <td><h4 align="center" style="margin-left: 5px"><%= (Time.now + one_day * (index +1)).strftime('%a') %></h4>
+        </td>
         <td><h4 align="center"><%= (weather['main']['temp'] - 273.15).round %>&degC</h4></td>
         <td>
           <h4 align="center"><%= icon(get_icon(weather['weather'][0]['main']), class: 'fa-2x') %></h4>
         </td>
         <td><h4><%= weather['weather'][0]['description'].capitalize %></h4></td>
-        <td><h4>Wind: <%= weather['wind']['speed'] %>
+        <td><h4><%= t('weather.wind') %> <%= weather['wind']['speed'] %>
           m/s, <%= get_direction(weather['wind']['deg']) %></h4></td>
-        <td><h4>Humidity: <%= weather['main']['humidity'] %>%</h4></td>
-        <td><h4>Cloudiness: <%= weather['clouds']['all'] %>%</h4></td>
+        <td><h4><%= t('weather.humidity') %> <%= weather['main']['humidity'] %>%</h4></td>
+        <td><h4><%= t('weather.cloudiness') %> <%= weather['clouds']['all'] %>%</h4></td>
       </tr>
   <% end %>
 </table>

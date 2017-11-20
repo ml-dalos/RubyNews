@@ -18,16 +18,16 @@
   </div>
   <div class="row" style="padding-top: 50px">
     <div class="col-lg-12 col-md-12 col-sm-12">
-      <h1 align="center">Read all news in one place!</h1>
-      <h1 align="center">Here you can read Onliner,</h1>
-      <h1 align="center">TUT.BY, Meduza and other!</h1>
-      <h1 align="center">Here you can find forecast!</h1>
+      <h1 align="center"><%= t :welcome_line_1 %></h1>
+      <h1 align="center"><%= t :welcome_line_2 %></h1>
+      <h1 align="center"><%= t :welcome_line_3 %></h1>
+      <h1 align="center"><%= t :welcome_line_4 %></h1>
     </div>
   </div>
   <div class="row" style="padding-top: 20px">
     <div class="col-lg-3 col-md-3 col-sm-3"></div>
     <div class="col-lg-6 col-md-6 col-sm-6" style="text-align:center; font-size: 30px">
-      &nbsp;&nbsp;&nbsp;Join with:
+      &nbsp;&nbsp;&nbsp;<%= t :join %>:
       <div class="btn-group -align-center">
         <%= button_to '/auth/twitter', method: :get, class: 'btn btn-default social' do %>
             <%= icon('twitter', class: 'fa-4x') %>

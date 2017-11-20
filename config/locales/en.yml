@@ -30,4 +30,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  logout: 'Log out'
+  settings: 'Settings'
+  read: 'Read'
+  all: 'All in one'
+  weather: 'Weather'
+  save: 'Save'
+  weather_forecast: 'Weather forecast'
+  join: 'Join with'
+  welcome_line_1: 'Read all news in one place!'
+  welcome_line_2: 'Here you can read Onliner,'
+  welcome_line_3: 'TUT.BY, Meduza and other!'
+  welcome_line_4: 'Here you can find forecast!'
+  error: "Sorry! Can't get forecast"
+  weather:
+    today: 'TODAY:'
+    wind: 'Wind:'
+    humidity: 'Humidity:'
+    cloudiness: 'Cloudiness:'

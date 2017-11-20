@@ -1,7 +1,10 @@
 class WelcomeController < ApplicationController
   def index
-    redirect_to '/login' unless helpers.current_user
-    @news = params[:source] ? check_source : News.where(source: helpers.current_user.sources).reverse_order
+    if !helpers.current_user
+      redirect_to '/login'
+    else
+      @news = params[:source] ? check_source : News.where(source: helpers.current_user.sources).reverse_order
+    end
   end
 
   private

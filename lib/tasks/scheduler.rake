@@ -48,7 +48,7 @@ task parse_tut: :environment do
     begin
       news = News.new(title: item.children[1].content,
                       link: item.children[3].content,
-                      description: item.children[5].content.gsub(%r{<.*\d"\s/>}, '').gsub(/<.*/, ''),
+                      description: item.children[5].content,
                       source: 'tut')
       news.save
     rescue ActiveRecord::RecordNotUnique
@@ -74,24 +74,6 @@ task parse_lenta: :environment do
     end
   end
   puts 'Lenta parsing done.'
-end
-task parse_lifehacker: :environment do
-  puts 'Parsing Lifehacker...'
-  uri = 'https://lifehacker.ru/feed/'
-  doc = Nokogiri::XML(open(uri))
-  items = doc.xpath('//item')
-  items.first(30).each do |item|
-    begin
-      news = News.new(title: item.children[1].content,
-                      link: item.children[3].content,
-                      description: item.children[17].content.gsub(/<.*>/, ''),
-                      source: 'lifehacker')
-      news.save
-    rescue ActiveRecord::RecordNotUnique
-      next
-    end
-  end
-  puts 'Lifehacker parsing done.'
 end
 task parse_bbc: :environment do
   puts 'Parsing BBC...'
@@ -128,22 +110,4 @@ task parse_charter: :environment do
     end
   end
   puts 'Charter97 parsing done.'
-end
-task parse_geektimes: :environment do
-  puts 'Parsing Geektimes...'
-  uri = 'https://geektimes.ru/rss/hubs/all/'
-  doc = Nokogiri::XML(open(uri))
-  items = doc.xpath('//item')
-  items.first(30).each do |item|
-    begin
-      news = News.new(title: item.children[1].content,
-                      link: item.children[3].content,
-                      description: item.children[7].content.gsub(/<.{1,100}>|\n|<a.*>|Читать дальше../, ''),
-                      source: 'geektimes')
-      news.save
-    rescue ActiveRecord::RecordNotUnique
-      next
-    end
-  end
-  puts 'Geektimes parsing done.'
 end

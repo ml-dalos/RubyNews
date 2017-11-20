@@ -20,32 +20,38 @@
       </div>
       <div class="modal-body">
         <%= form_tag '/update' do %>
-            <%= check_box_tag :tut, '1', source?(:tut) %>
-            <%= label_tag(:tut, 'tut.by') %>
-            <%= check_box_tag :onliner, '1', source?(:onliner) %>
-            <%= label_tag(:onliner, 'people.onliner.by') %>
-            <%= check_box_tag(:meduza, '1', source?(:meduza)) %>
-            <%= label_tag(:meduza, 'meduza.ru') %>
-            <%= check_box_tag :lenta, '1', source?(:lenta) %>
-            <%= label_tag(:lenta, 'lenta.ru') %>
-            <%= check_box_tag :lifehacker, '1', source?(:lifehacker) %>
-            <%= label_tag(:lifehacker, 'lifehacker.ru') %>
-            <%= check_box_tag :bbc, '1', source?(:bbc) %>
-            <%= label_tag(:bbc, 'BBC Russia') %>
-            <%= check_box_tag :tut, '1', source?(:tut) %>
-            <%= label_tag(:tut, 'tut.by') %>
-            <%= check_box_tag :charter, '1', source?(:charter) %>
-            <%= label_tag(:charter, 'charter97.by') %>
-            <%= check_box_tag :geektimes, '1', source?(:geektimes) %>
-            <%= label_tag(:geektimes, 'geektimes.ru') %>
-        <div class="row -align-center">
-          <div class="col-lg-6" align="right">
-            <%= submit_tag 'Save', class: 'btn btn-default w-50' %>
-          </div>
+            <div class="row -align-center">
+              <div class="col-lg-3"></div>
+              <div class="col-lg-3" align="left">
+                <%= check_box_tag :tut, '1', source?(:tut) %>
+                <%= label_tag(:tut, 'tut.by') %>
+                <br/>
+                <%= check_box_tag :onliner, '1', source?(:onliner) %>
+                <%= label_tag(:onliner, 'people.onliner.by') %>
+                <br/>
+                <%= check_box_tag(:meduza, '1', source?(:meduza)) %>
+                <%= label_tag(:meduza, 'meduza.ru') %>
+                <br/>
+              </div>
+              <div class="col-lg-6" align="left">
+                <%= check_box_tag :lenta, '1', source?(:lenta) %>
+                <%= label_tag(:lenta, 'lenta.ru') %>
+                <br/>
+                <%= check_box_tag :bbc, '1', source?(:bbc) %>
+                <%= label_tag(:bbc, 'BBC Russia') %>
+                <br/>
+                <%= check_box_tag :charter, '1', source?(:charter) %>
+                <%= label_tag(:charter, 'charter97.by') %>
+              </div>
+            </div>
+            <div class="row -align-center">
+              <div class="col-lg-6" align="right">
+                <%= submit_tag 'Save', class: 'btn btn-default w-50' %>
+              </div>
         <% end %>
-          <div class="col-lg-6">
-            <%= button_to 'Log out', '/logout', method: 'get', class: 'btn btn-default w-50' %>
-          </div>
+        <div class="col-lg-6">
+          <%= button_to 'Log out', '/logout', method: 'get', class: 'btn btn-default w-50' %>
+        </div>
         </div>
       </div>
     </div>

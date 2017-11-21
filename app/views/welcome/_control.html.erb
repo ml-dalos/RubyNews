@@ -13,9 +13,8 @@
   <button type="button" class="btn btn-default w-100" data-toggle="modal" data-target="#settings">
     <%= icon('cogs') %><%= t 'settings' %>
   </button>
-  <!--<hr/>-->
   <div class="locales">
-    <%= link_to_unless I18n.locale == :en, 'en', locale: :en, class: 'btn' %>
+    <%= link_to_unless I18n.locale == :en, 'en', locale: :en %>
     <%= link_to_unless I18n.locale == :ru, 'ru', locale: :ru %>
   </div>
 </div>

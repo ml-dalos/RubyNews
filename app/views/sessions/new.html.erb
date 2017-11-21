@@ -12,7 +12,7 @@
 <body>
 <div class="container-fluid">
   <div class="locales">
-    <%= link_to_unless I18n.locale == :en, 'en', locale: :en, class: 'btn' %>
+    <%= link_to_unless I18n.locale == :en, 'en', locale: :en%>
     <%= link_to_unless I18n.locale == :ru, 'ru', locale: :ru %>
   </div>
   <div class="row" style="padding-top: 20px">

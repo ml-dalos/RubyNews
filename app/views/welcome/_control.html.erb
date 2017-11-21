@@ -1,0 +1,21 @@
+<div class="col-lg-3 col-md-3 col-sm-3 control fixed-top" style="padding-top: 10px">
+  <h2 style="padding-bottom: 20px"><%= icon('diamond', class: 'fa-2x') %>Ruby News</h2>
+  <%= link_to t('all'), root_path, class: 'btn btn-default w-100' %>
+  <hr>
+  <% current_user.sources.each do |source| %>
+      <%= link_to source.capitalize, news_path(source: source), class: 'btn btn-default w-100 source' %>
+  <% end %>
+  <hr>
+  <%= link_to weather_path, method: 'get', class: 'btn btn-default w-100' do %>
+      <%= icon('thermometer-half') %><%= t 'weath' %>
+  <% end %>
+  <hr>
+  <button type="button" class="btn btn-default w-100" data-toggle="modal" data-target="#settings">
+    <%= icon('cogs') %><%= t 'settings' %>
+  </button>
+  <!--<hr/>-->
+  <div class="locales">
+    <%= link_to_unless I18n.locale == :en, 'en', locale: :en, class: 'btn' %>
+    <%= link_to_unless I18n.locale == :ru, 'ru', locale: :ru %>
+  </div>
+</div>

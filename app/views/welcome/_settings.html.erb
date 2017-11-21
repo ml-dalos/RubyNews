@@ -1,0 +1,48 @@
+<div class="modal fade bd-modal-lg" id="settings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><%= t 'settings' %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_tag update_path do %>
+            <div class="row -align-center">
+              <div class="col-lg-3"></div>
+              <div class="col-lg-3" align="left">
+                <%= check_box_tag :tut, '1', source?(:tut) %>
+                <%= label_tag(:tut, 'tut.by') %>
+                <br/>
+                <%= check_box_tag :onliner, '1', source?(:onliner) %>
+                <%= label_tag(:onliner, 'people.onliner.by') %>
+                <br/>
+                <%= check_box_tag(:meduza, '1', source?(:meduza)) %>
+                <%= label_tag(:meduza, 'meduza.ru') %>
+                <br/>
+              </div>
+              <div class="col-lg-6" align="left">
+                <%= check_box_tag :lenta, '1', source?(:lenta) %>
+                <%= label_tag(:lenta, 'lenta.ru') %>
+                <br/>
+                <%= check_box_tag :bbc, '1', source?(:bbc) %>
+                <%= label_tag(:bbc, 'BBC Russia') %>
+                <br/>
+                <%= check_box_tag :charter, '1', source?(:charter) %>
+                <%= label_tag(:charter, 'charter97.by') %>
+              </div>
+            </div>
+            <div class="row -align-center">
+              <div class="col-lg-6" align="right">
+                <%= submit_tag t('save'), class: 'btn btn-default w-50' %>
+              </div>
+        <% end %>
+        <div class="col-lg-6">
+          <%= button_to t('logout'), logout_path, method: 'get', class: 'btn btn-default w-50' %>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

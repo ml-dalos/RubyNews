@@ -11,23 +11,27 @@
 
 <body>
 <div class="container-fluid">
-  <div class="row" style="padding-top: 50px">
+  <div class="locales">
+    <%= link_to_unless I18n.locale == :en, 'en', locale: :en, class: 'btn' %>
+    <%= link_to_unless I18n.locale == :ru, 'ru', locale: :ru %>
+  </div>
+  <div class="row" style="padding-top: 20px">
     <div class="col-lg-12 col-md-12 col-sm-12">
       <h1 align="center" style="font-size:65px;"><%= icon('diamond', class: 'fa-3x') %>Ruby News</h1>
     </div>
   </div>
   <div class="row" style="padding-top: 50px">
     <div class="col-lg-12 col-md-12 col-sm-12">
-      <h1 align="center"><%= t :welcome_line_1 %></h1>
-      <h1 align="center"><%= t :welcome_line_2 %></h1>
-      <h1 align="center"><%= t :welcome_line_3 %></h1>
-      <h1 align="center"><%= t :welcome_line_4 %></h1>
+      <h1 align="center"><%= t 'welcome_line_1' %></h1>
+      <h1 align="center"><%= t 'welcome_line_2' %></h1>
+      <h1 align="center"><%= t 'welcome_line_3' %></h1>
+      <h1 align="center"><%= t 'welcome_line_4' %></h1>
     </div>
   </div>
   <div class="row" style="padding-top: 20px">
     <div class="col-lg-3 col-md-3 col-sm-3"></div>
     <div class="col-lg-6 col-md-6 col-sm-6" style="text-align:center; font-size: 30px">
-      &nbsp;&nbsp;&nbsp;<%= t :join %>:
+      &nbsp;&nbsp;&nbsp;<%= t 'join' %>:
       <div class="btn-group -align-center">
         <%= button_to '/auth/twitter', method: :get, class: 'btn btn-default social' do %>
             <%= icon('twitter', class: 'fa-4x') %>

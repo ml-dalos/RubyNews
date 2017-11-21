@@ -3,6 +3,6 @@
     <h4 class="card-title"><%= news.title %></h4>
     <h6 class="card-subtitle mb-2 text-muted"><%= news.source %></h6>
     <p class="card-text"><%= raw(news.description) %></p>
-    <%= button_to t(:read), news.link, method: :get, class: 'btn btn-default card-button', form: {target: '_blank'} %>
+    <%= button_to t('read'), news.link, method: :get, class: 'btn btn-default card-button', form: {target: '_blank'} %>
   </div>
 </div>

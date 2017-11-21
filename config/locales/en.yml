@@ -30,21 +30,36 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  logout: 'Log out'
-  settings: 'Settings'
-  read: 'Read'
-  all: 'All in one'
-  weather: 'Weather'
-  save: 'Save'
-  weather_forecast: 'Weather forecast'
-  join: 'Join with'
-  welcome_line_1: 'Read all news in one place!'
-  welcome_line_2: 'Here you can read Onliner,'
-  welcome_line_3: 'TUT.BY, Meduza and other!'
-  welcome_line_4: 'Here you can find forecast!'
-  error: "Sorry! Can't get forecast"
-  weather:
-    today: 'TODAY:'
-    wind: 'Wind:'
-    humidity: 'Humidity:'
-    cloudiness: 'Cloudiness:'
+  'logout': "Log out"
+  'settings': "Settings"
+  'read': "Read"
+  'all': "All in one"
+  'weath': "Weather"
+  'save': "Save"
+  'weather_forecast': "Weather forecast"
+  'join': "Join with"
+  'welcome_line_1': "Read all news in one place!"
+  'welcome_line_2': "Here you can read Onliner,"
+  'welcome_line_3': "TUT.BY, Meduza and other!"
+  'welcome_line_4': "Here you can find forecast!"
+  'error': "Sorry! Can't get forecast"
+  'Mon': "Mon"
+  'Tue': "Tue"
+  'Wed': "Wed"
+  'Thu': "Thu"
+  'Fri': "Fri"
+  'Sat': "Sat"
+  'Sun': "Sun"
+  'Clear': "Clear"
+  'Rain': "Rain"
+  'Clouds': "Clouds"
+  'Thunderstorm': "Storm"
+  'Extreme': "Extreme"
+  'Atmosphere': "Atmosphere"
+  'Snow': "Snow"
+  'Drizzle': "Drizzle"
+  'weather':
+    'today': "TODAY:"
+    'wind': "Wind:"
+    'humidity': "Humidity:"
+    'cloudiness': "Cloudiness:"

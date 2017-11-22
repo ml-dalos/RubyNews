@@ -20,7 +20,7 @@
 <hr>
 
 <table class="table-striped" style="width: 100%">
-  <% @weather.each do |weather| %>
+  <% @weather.each.with_index do |weather, index| %>
       <tr>
         <td><h4 align="center" style="margin-left: 5px"><%= t((Time.now + one_day * (index +1)).strftime('%a')) %></h4>
         </td>

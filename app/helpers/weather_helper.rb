@@ -2,7 +2,7 @@ module WeatherHelper
   DIRECTIONS = %w[N NNE NE ENE E ESE SE SSE S SSW SW WSW W WNW NW NNW].freeze
 
   def get_direction(deg)
-    DIRECTIONS[(deg/22.5 + 0.5).round % 16]
+    DIRECTIONS[(deg / 22.5 + 0.5).round % 16]
   end
 
   def get_icon(name)

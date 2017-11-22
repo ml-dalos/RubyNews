@@ -2,7 +2,7 @@ require 'open-uri'
 require 'nokogiri'
 
 desc 'This task is called by the Heroku scheduler add-on for parsing sources,'\
-' getting news and filling db'
+' getting news and filling db or for deleting old news from db'
 task parse_meduza: :environment do
   puts 'Parsing Meduza...'
   uri = 'https://meduza.io/rss/all'
@@ -110,4 +110,9 @@ task parse_charter: :environment do
     end
   end
   puts 'Charter97 parsing done.'
+end
+task clear_db: :environment do
+  puts 'Clearing db...'
+  News.first(50).each { |news| News.delete(news) }
+  puts 'Clearing done.'
 end

@@ -6,7 +6,8 @@ Rails.application.config.middleware.use OmniAuth::Builder do
            '6100837',
            'hWI4wrah15xaxNSofKho'
   provider :google_oauth2,
-           '1009869426048-vv2pdmv9audnmspnkqi4smnqtd2dujki.apps.googleusercontent.com',
+           '1009869426048-vv2pdmv9audnmspnkqi4smnqtd2dujki.apps.googleuserconten'\
+'t.com',
            'Wsiv3WeNnJjNKtoxjn7BUj6d',
            scope: 'profile',
            access_type: 'online',

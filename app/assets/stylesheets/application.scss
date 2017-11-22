@@ -12,8 +12,7 @@ html, body {
 .body {
   overflow-y: scroll;
   width: calc(100% + 20px);
-  padding: 8px;
-  padding-left: 25%;
+  padding: 8px 8px 8px 25%;
 }
 
 .control {
@@ -39,20 +38,29 @@ a, a:hover {
   color: buttontext;
 }
 
-.card-block form{
+.card-block form {
   text-align: right;
   margin-right: 10px;
 }
-.card-block form .btn{
+
+.card-block form .btn {
   width: 15%;
 }
-.locales{
+
+.locales {
   margin-top: 10px;
   font-size: x-large;
 }
-.locales a{
+
+.locales a {
   font-size: medium;
   border-radius: 5px;
   text-decoration: none;
   padding: 5px;
+}
+
+.card {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
 }

@@ -11,7 +11,7 @@
   </div>
   <div class="col-lg-5 col-md-5 col-sm-5">
     <h3><%= t('weather.wind') %> <%= @weather[0]['wind']['speed'] %>m/s,
-      <%= get_direction(@weather[0]['wind']['deg']) %>
+      <%= t(get_direction(@weather[0]['wind']['deg'])) %>
     </h3>
     <h3><%= t('weather.humidity') %> <%= @weather[0]['main']['humidity'] %>% </h3>
     <h3><%= t('weather.cloudiness') %> <%= @weather.shift['clouds']['all'] %>% </h3>

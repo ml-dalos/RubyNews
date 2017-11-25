@@ -30,7 +30,7 @@
         </td>
         <td><h4><%= t(weather['weather'][0]['main'].capitalize) %></h4></td>
         <td><h4><%= t('weather.wind') %> <%= weather['wind']['speed'] %>
-          m/s, <%= t(get_direction(weather['wind']['deg']))%></h4></td>
+          <%= t('weather.ms') %>, <%= t(get_direction(weather['wind']['deg']))%></h4></td>
         <td><h4><%= t('weather.humidity') %> <%= weather['main']['humidity'] %>%</h4></td>
         <td><h4><%= t('weather.cloudiness') %> <%= weather['clouds']['all'] %>%</h4></td>
       </tr>

@@ -10,7 +10,7 @@
     <h3 align="center"><%= (@weather[0]['main']['temp'] - 273.15).round %> &deg C</h3>
   </div>
   <div class="col-lg-5 col-md-5 col-sm-5">
-    <h3><%= t('weather.wind') %> <%= @weather[0]['wind']['speed'] %>m/s,
+    <h3><%= t('weather.wind') %> <%= @weather[0]['wind']['speed'] %><%= t('weather.ms') %>,
       <%= t(get_direction(@weather[0]['wind']['deg'])) %>
     </h3>
     <h3><%= t('weather.humidity') %> <%= @weather[0]['main']['humidity'] %>% </h3>

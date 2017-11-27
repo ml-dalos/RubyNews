@@ -38,25 +38,27 @@ a, a:hover {
   color: buttontext;
 }
 
-.card-block form {
-  text-align: right;
-  margin-right: 10px;
-}
+.card-block {
+  form {
+    text-align: right;
+    margin-right: 10px;
 
-.card-block form .btn {
-  width: 15%;
+    .btn {
+      width: 15%;
+    }
+  }
 }
 
 .locales {
   margin-top: 10px;
   font-size: x-large;
-}
 
-.locales a {
-  font-size: medium;
-  border-radius: 5px;
-  text-decoration: none;
-  padding: 5px;
+  a {
+    font-size: medium;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
+  }
 }
 
 .card {
